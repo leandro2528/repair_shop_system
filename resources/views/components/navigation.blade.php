@@ -3,15 +3,15 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link " href="">
+            <a class="nav-link " href="{{ route('dashboards-index') }}">
             <i class="bi bi-grid"></i>
-            <span>NAVEGAÇÃO</span>
+            <span>painel inicial</span>
             </a>
         </li>
 
         <!-- Clientes -->
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#btn-cliente" data-bs-toggle="collapse" href="#">
+            <a class="nav-link collapsed" data-bs-target="#btn-cliente" data-bs-toggle="collapse" href="{{ route('clientes-index') }}">
                 <i class="bi bi-menu-button-wide"></i><span>Clientes</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
         </li>
