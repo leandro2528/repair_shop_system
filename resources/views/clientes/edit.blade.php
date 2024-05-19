@@ -38,6 +38,26 @@
                     <label class="mb-2" for="">Endereço do cliente</label>
                     <input type="text" class="form-control" value="{{ $clientes->endereco }}" name="endereco">
                 </div>
+
+                <div class="form-group my-2">
+                    <label class="mb-2" for="">Serviço</label>
+                    <textarea class="form-control" name="servico" id="servico">{{ $clientes->servico }}</textarea>
+                </div>
+
+                <div class="form-group my-2">
+                    <label class="mb-2" for="">Observação</label>
+                    <textarea class="form-control" name="observacao" id="observacao">{{ $clientes->observacao }}</textarea>
+                </div>
+
+                <div class="form-group my-2">
+                    <label class="mb-2" for="">Valor do serviço</label>
+                    <input type="text" class="form-control" value="{{ $clientes->valor }}" name="valor">
+                </div>
+
+                <div class="form-group my-2">
+                    <label class="mb-2" for="">Valor entrada</label>
+                    <input type="text" class="form-control" value="{{ $clientes->valor_entrada }}" name="valor_entrada">
+                </div>
                 
                 <div class="form-group my-4">
                     <input type="submit" class="btn btn-outline-warning btn-sm" value="Editar">

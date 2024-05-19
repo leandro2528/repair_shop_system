@@ -23,24 +23,58 @@
         <div class="col">
             <form action="{{ route('clientes-store') }}" method="POST">
                 @csrf
-                <div class="form-group my-2">
-                    <label class="mb-2" for="">Nome do cliente</label>
-                    <input type="text" class="form-control" name="nome">
+                <div class="form-card d-flex justify-content-between">
+                    <div class="form-group my-2 w-100">
+                        <label class="mb-2" for="">Nome do cliente</label>
+                        <input type="text" class="form-control" name="nome" placeholder="EX: João" required>
+                    </div>
+                    
+                    <div class="form-group my-2  w-100 mx-3">
+                        <label class="mb-2" for="">Telefone do cliente</label>
+                        <input type="text" class="form-control" name="telefone" placeholder="EX: 9 8600-0001" required>
+                    </div>
+                    
+                    <div class="form-group my-2  w-100">
+                        <label class="mb-2" for="">Endereço do cliente</label>
+                        <input type="text" class="form-control" name="endereco" placeholder="EX: Rua exmplo N- 100" required>
+                    </div>
                 </div>
-                
-                <div class="form-group my-2">
-                    <label class="mb-2" for="">Telefone do cliente</label>
-                    <input type="text" class="form-control" name="telefone">
-                </div>
-                
-                <div class="form-group my-2">
-                    <label class="mb-2" for="">Endereço do cliente</label>
-                    <input type="text" class="form-control" name="endereco">
-                </div>
-                
-                <div class="form-group my-4">
-                    <input type="submit" class="btn btn-outline-primary btn-sm" value="Cadastrar">
-                </div>
+
+               <div class="form-card d-flex justify-content-between">
+                    <div class="form-group my-2 w-100">
+                        <label class="mb-2" for="">Produto</label>
+                        <input type="text" class="form-control" name="produto" placeholder="EX: Calçado, bolsa, mochila, cinto, mala, etc..." required>
+                    </div>
+
+                    <div class="form-group my-2 w-100 mx-3">
+                        <label class="mb-2" for="">Serviço</label>
+                        <textarea class="form-control" name="servico" id="servico" required></textarea>
+                    </div>
+
+                    <div class="form-group my-2 w-100">
+                        <label class="mb-2" for="">Observação</label>
+                        <textarea class="form-control" name="observacao" id="observacao" required></textarea>
+                    </div>
+
+               </div>
+
+               <div class="form-card d-flex justify-content-between">
+
+                    <div class="form-group my-2 w-100">
+                        <label class="mb-2" for="">Valor</label>
+                        <input type="text" class="form-control" name="valor" placeholder="R$ 00,00" required>
+                    </div>
+
+                    <div class="form-group my-2 w-100 ms-3">
+                        <label class="mb-2" for="">Valor de entrada</label>
+                        <input type="text" class="form-control" name="valor_entrada" placeholder="R$ 00,00" required>
+                    </div>
+               </div>
+
+               <div class="form-group my-4 w-100">
+                    <input type="submit" class="btn btn-outline-primary btn-sm" value="Salvar">
+               </div>
+
             </form>
         </div>
     </div>

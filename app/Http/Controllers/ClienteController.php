@@ -22,7 +22,11 @@ class ClienteController extends Controller
         $request->validate([
             'nome' => 'required',
             'telefone' => 'required',
-            'endereco' => 'required'
+            'endereco' => 'required',
+            'servico' => 'required',
+            'observacao' => 'required',
+            'valor' => 'required',
+            'valor_entrada' => 'required'
         ]);
 
         Cliente::create($request->all());
@@ -41,7 +45,11 @@ class ClienteController extends Controller
         $data = [
             'nome' => $request->nome,
             'telefone' => $request->telefone,
-            'endereco' => $request->endereco
+            'endereco' => $request->endereco,
+            'servico' => $request->servico,
+            'observacao' => $request->observacao,
+            'valor' => $request->valor,
+            'valor_entrada' => $request->valor_entrada
         ];
         $clientes = Cliente::where('id', $id)->update($data);
 

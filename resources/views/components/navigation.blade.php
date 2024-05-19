@@ -19,7 +19,7 @@
 
         <!-- Consertos -->
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#btn-conserto" data-bs-toggle="collapse" href="#">
+            <a class="nav-link collapsed" data-bs-target="#btn-conserto" data-bs-toggle="collapse" href="">
                 <i class="bi bi-menu-button-wide"></i><span>Consertos</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
         </li>

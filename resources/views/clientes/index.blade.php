@@ -57,13 +57,19 @@
         @endif
 
         @if(count($clientes))
-            <table class="table">
+            <table class="table table-bordered table-hover table-striped">
                 <thead style="font-size: 12px;">
                 <tr>
                     <th>#</th>
                     <th>Nome</th>
                     <th>Telefone</th>
                     <th>Endereço</th>
+                    <th>Produto</th>
+                    <th>Serviço</th>
+                    <th>Observação</th>
+                    <th>Valor do serviço</th>
+                    <th>Valor de entrada</th>
+                    <th>Valor restante</th>
                     <th>Ações</th>
                 </tr>
                 </thead>
@@ -74,6 +80,12 @@
                         <td>{{ $cliente->nome }}</td>
                         <td>{{ $cliente->telefone }}</td>
                         <td>{{ $cliente->endereco }}</td>
+                        <td>{{ $cliente->produto }}</td>
+                        <td>{{ $cliente->servico }}</td>
+                        <td>{{ $cliente->observacao }}</td>
+                        <td>R$ {{ ($cliente->valor) }}, 00</td>
+                        <td>R$ {{ ($cliente->valor_entrada) }},00</td>
+                        <td>R$ {{ ($cliente->valor - $cliente->valor_entrada) }},00</td>
                         <td class="d-flex">
                             <a class="btn btn-outline-warning btn-sm" href="{{ route('clientes-edit', ['id'=>$cliente->id]) }}" title="Clique para editar cliente">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -90,6 +102,11 @@
                                     </svg>
                                 </button>
                             </form>
+                            <a class="btn btn-outline-success btn-sm ms-2" href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $cliente->telefone) }}" target="_blank" title="Enviar mensagem pelo WhatsApp">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                    <path d="M13.601 2.344A7.5 7.5 0 1 0 7.5 15a7.4 7.4 0 0 0 3.701-.977l2.163.575-1.675-1.575c.405-.346.78-.751 1.108-1.203C14.781 10.755 15 9.295 15 7.5c0-1.422-.39-2.78-1.1-3.956-.228-.377-.506-.727-.846-1.1zm-2.683 9.918a6.6 6.6 0 1 1-5.258-10.15c.912.05 1.786.35 2.548.855a6.561 6.561 0 0 1 3.145 5.295c0 1.194-.31 2.34-.872 3.328l-.96-.254-.603.682zm.694-2.358-1.516-1.133a.96.96 0 0 0-.924-.156l-.234.098a.86.86 0 0 1-.474.031.99.99 0 0 1-.413-.242c-.88-.805-1.716-1.741-2.453-2.798-.169-.247-.346-.508-.456-.788-.08-.201-.105-.415-.073-.627a.875.875 0 0 1 .227-.512l.16-.159a.835.835 0 0 0 .144-.944l-.147-.293c-.057-.114-.116-.227-.18-.34a1.027 1.027 0 0 0-.817-.524 1.183 1.183 0 0 0-.573.089c-.42.159-.824.376-1.205.642a5.842 5.842 0 0 0-.56.48c-.08.079-.154.164-.227.25-.136.166-.286.348-.366.548a1.292 1.292 0 0 0 .098 1.275c.081.108.176.208.28.301a7.213 7.213 0 0 0 4.64 2.412c.037.003.073.003.11.002.186-.003.37-.018.551-.048.177-.03.354-.071.527-.125a6.32 6.32 0 0 0 1.408-.524c.082-.044.16-.097.239-.145.105-.06.207-.127.306-.196a1.171 1.171 0 0 0 .37-1.329z"/>
+                                </svg>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('nome');
             $table->string('telefone');
             $table->string('endereco');
+            $table->string('produto');
+            $table->string('servico');
+            $table->string('observacao');
+            $table->double('valor', 8, 2);
+            $table->double('valor_entrada', 8, 2);
             $table->timestamps();
         });
     }
